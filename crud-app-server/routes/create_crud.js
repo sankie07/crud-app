@@ -1,4 +1,6 @@
 const express = require('express')
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const url = 'mongodb+srv://man:man@cluster0.naw5mar.mongodb.net/';
 
 const router= express.Router();
 

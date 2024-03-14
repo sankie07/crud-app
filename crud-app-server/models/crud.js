@@ -23,4 +23,4 @@ const crudSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('table_crud',crudSchema)
+module.exports = mongoose.model('table_cred',crudSchema)
