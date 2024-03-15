@@ -1,26 +1,26 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv/config");
 const app = express();
 
-app.use(cors({
-  origin: ["https://crud-app-pink-sigma.vercel.app"],
-  methods: ["POST", "GET"],
-  credentials: true
-}));
+// Allow requests from a specific origin
+const corsOptions = {
+  origin: "https://crud-app-pink-sigma.vercel.app",
+  methods: ["GET", "POST"], // Adjust the allowed HTTP methods as needed
+  credentials: true, // Enable credentials (cookies, authorization headers) if required
+};
 
-app.use(express.json());
+// Use the CORS middleware with the specified options
+app.use(cors(corsOptions));
 
-const db = require('./db');
+// Your route handlers and other middleware
 
-const createCrudRoute = require('./routes/create_crud');
+// Example route
+app.post("/addcrud", (req, res) => {
+  // Handle the POST request
+});
 
-app.use(bodyParser.json());
-app.use(cors());
-app.use('/api', createCrudRoute);
-
+// Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Port is running on -http:\\localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
