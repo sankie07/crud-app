@@ -5,7 +5,7 @@ require("dotenv/config");
 const app = express();
 
 app.use(cors({
-  origin: ["https://deploy-mern-1wha.vercel.app"],
+  origin: ["https://crud-app-pink-sigma.vercel.app/"],
   methods: ["POST", "GET"],
   credentials: true
 }));
